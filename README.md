@@ -25,3 +25,13 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Notes on Lesson completion event
+
+Once the last lesson is completed the object with properties(lessonId, startTime and endTime) is stored in local storage of browser.
+
+localStorage.setItem("lessonCompletion", this.lessonCompleted.toString());
+
+Can be retreived via : localStorage.getItem("lessonCompletion");
+
+
