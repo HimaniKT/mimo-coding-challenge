@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row" *ngIf="currentLesson && lessonFinished != true">
+        <div>
+                <span *ngFor="let content of currentLesson.content">
+                       <span [style.background-color]="content.color"> {{ content.text }} </span>
+                </span>
+            <input *ngIf="currentLesson.input != undefined" type="text" [(ngModel)]="userInput"
+                   (ngModelChange)="enableContinue($event,currentLesson)"/>
+        </div>
+        <div class="row">
+            <button [disabled]="currentLesson.input != undefined && !enableContinueButton"
+                    (click)="nextLesson(currentLesson.id)" class="btn btn-primary"> Continue
+            </button>
+        </div>
+    </div>
+
+    <div class="row" *ngIf="lessonFinished == true">
+        Done.
+    </div>
+</div>
